@@ -1,6 +1,6 @@
 <?php
 
-$base="http://".$_SERVER['SERVER_NAME']."/can/cy/";
+$base="http://".$_SERVER['SERVER_NAME']."/";
 
 //theme folder name which is in view
 $tema="tema";
@@ -14,7 +14,7 @@ $user="root";
 //veritabanı ------------- database
 
 
-//panel password ------------ control panel
+//panel password ------------ control panel Easma login
 $admin="admin";
 $admin_pass="123456";
 $lang="en";
