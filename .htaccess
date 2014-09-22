@@ -1,0 +1,4 @@
+RewriteEngine On
+RewriteRule ^([A-Za-z0-9-]+).html$ index.php?page=$1 [L,NC]
+RewriteRule ^ide/([A-Za-z0-9-]+)/(.*).html$ index.php?id=$1&page=detail_ide [L,NC]
+RewriteRule ^products/([A-Za-z0-9-]+)/(.*).html$ index.php?id=$1&page=detail_pr [L,NC]
