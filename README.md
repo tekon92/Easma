@@ -1,7 +1,4 @@
-Easma
-=====
-
-# Easy Management Cms With Php
+# Easma - Easy Management Cms With Php
 
 No framework --- No template engine
 
