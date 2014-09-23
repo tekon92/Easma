@@ -12,7 +12,7 @@ class model{
             $this->db = $database;
             return $this->conn->connect_errno;
         } catch (Exception $e) {
-              exit('No db connection ! modal line 13');
+              exit('No db connection ! model line 15');
         }
     }
     protected function mquery($sql){
@@ -21,13 +21,13 @@ class model{
     }
     protected function select($sql){
             $this->mquery($sql);
-            if ($this->conn->error){ exit("modal sql error line 18  !"); }
+            if ($this->conn->error){ exit("model sql error line 24  !"); }
             return $this->query->fetch_assoc();
     }
     protected function multiple_select($sql){
             $rows=array();
             $this->mquery($sql);
-            if ($this->conn->error){ exit("modal sql error line 24  !"); }
+            if ($this->conn->error){ exit("model sql error line 30  !"); }
             while($row=$this->query->fetch_assoc()){ $rows[]=$row; }
             return $rows;
     }
@@ -42,7 +42,7 @@ class model{
             else{ return false; }
     }
     protected function total_record(){
-            if ($this->conn->error){ exit("modal sql error line 29  !"); }
+            if ($this->conn->error){ exit("model sql error line 45  !"); }
             return $this->query->num_rows;
     }
     protected function delete($table,$where){
