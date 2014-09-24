@@ -29,18 +29,75 @@
       </header>
       <section>
         <h1>
-<a name="welcome-to-easma-pages" class="anchor" href="#welcome-to-easma-pages"><span class="octicon octicon-link"></span></a>Welcome to Easma Pages</h1>
+<a name="easma" class="anchor" href="#easma"><span class="octicon octicon-link"></span></a>Easma</h1>
 
-<p>Easma is a php cms project which is easy.</p>
+<p>Easma is cms project which is coding with php. It is simple cms example.
+No framework,No template engine !</p>
+
+<p>You can make your blog or website with Easma and you can join me for developing it.</p>
 
 <h1>
-<a name="how-to-use-easma" class="anchor" href="#how-to-use-easma"><span class="octicon octicon-link"></span></a>How to use easma</h1>
+<a name="how-to-install" class="anchor" href="#how-to-install"><span class="octicon octicon-link"></span></a>How to install</h1>
 
 <ul>
-<li>İmport db to your mysql and clone files.</li>
+<li>Copy all files to under httpdocs/ or public_html/</li>
+<li>Import .sql to mysql</li>
 <li>Edit config.php</li>
+<li>Finally you are ready to go. Go to http://$base/panel</li>
 </ul><h1>
-<a name="examples" class="anchor" href="#examples"><span class="octicon octicon-link"></span></a>Examples</h1>
+<a name="example" class="anchor" href="#example"><span class="octicon octicon-link"></span></a>Example</h1>
+
+<p><strong>Let's make General Options page for web site</strong></p>
+
+<p>/panel/views/menu.php we add this code </p>
+
+<ul>
+<li>$site-&gt;menu("Site Options","general_options");</li>
+</ul><p>Site Options is our menu name. general_options is our php view script which is under /panel/views/ folder.</p>
+
+<p><strong>Creating general_options.php</strong></p>
+
+<p>Create general_options.php to /panel/views/general_options.php and Add this lines...</p>
+
+<ul>
+<li><p>if (!isset($base)){ exit(); }</p></li>
+<li><p>$site-&gt;check_admin();</p></li>
+<li><p>$site-&gt;post_update("ok","general","1","Site Options"); </p></li>
+</ul><p>// update general table where id=1</p>
+
+<ul>
+<li>$site-&gt;select_single_query("general","where id='1'"); </li>
+</ul><p>//check table's data</p>
+
+<ul>
+<li>$site-&gt;view-&gt;form("POST","",0); </li>
+</ul><p>// 0 means no file post</p>
+
+<ul>
+<li>$site-&gt;view-&gt;varchar("inpt2","title","Web site Title :",stripslashes($site-&gt;view_query['title'])); </li>
+</ul><p>// inpt2 is css class name. title is table column. </p>
+
+<p><strong>varchar,add_pic,ckeditor etc. for check /panel/controller/form_view.php</strong> </p>
+
+<ul>
+<li><p>$site-&gt;view-&gt;varchar("inpt2","description","Web site description :",stripslashes($site-&gt;view_query['description']));</p></li>
+<li><p>$site-&gt;view-&gt;varchar("inpt2","keywords","Web site keywords :",stripslashes($site-&gt;view_query['keywords']));</p></li>
+<li><p>$site-&gt;view-&gt;varchar("inpt2","facebook","Facebook :",stripslashes($site-&gt;view_query['facebook']));</p></li>
+<li><p>$site-&gt;view-&gt;varchar("inpt2","twitter","Twitter :",stripslashes($site-&gt;view_query['twitter']));</p></li>
+<li><p>$site-&gt;view-&gt;add_pic("pic_add","logo","Logo : ","general","1","Picture");</p></li>
+<li><p>$site-&gt;view-&gt;ckeditor("text","content","Main Text :",stripslashes($site-&gt;view_query['content']),$site-&gt;site_url);</p></li>
+<li><p>$site-&gt;view-&gt;ckeditor("text","footer_text","Footer :",stripslashes($site-&gt;view_query['footer_text']),$site-&gt;site_url);</p></li>
+<li><p>$site-&gt;view-&gt;submit("submit","ok","Update");</p></li>
+<li><p>$site-&gt;view-&gt;form_close();</p></li>
+</ul><p>And general_options ready</p>
+
+<p><a href="http://i.hizliresim.com/2Q5EYE.png">screenshot1</a></p>
+
+<p><a href="http://i.hizliresim.com/B94yRL.png">screenshot2</a></p>
+
+<p><img src="http://i.hizliresim.com/2Q5EYE.png" alt="scr1"></p>
+
+<p><img src="http://i.hizliresim.com/B94yRL.png" alt="scr2"></p>
 
 <p>-&gt; Support or Contact
 <a href="https://twitter.com/cnyalcin">https://twitter.com/cnyalcin</a></p>
