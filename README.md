@@ -14,7 +14,7 @@ You can join me for developing Easma.
 
 3. Edit config.php
 
-4. Finaly you are ready to go. Go to http://$base/panel  
+4. Finally you are ready to go. Go to http://$base/panel  
 
 
 Easma First Looking --> Click screenshot to watch 
